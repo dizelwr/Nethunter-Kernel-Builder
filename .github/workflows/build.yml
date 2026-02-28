@@ -42,7 +42,8 @@ jobs:
       kernelBranch: ${{ matrix.repos.kernelSource.branch }}
       kernelDevice: ${{ matrix.repos.kernelSource.device }}
 
-      DEFCONFIG_NAME: ${{ matrix.repos.kernelSource.device }}_defconfig
+      # Берем defconfig из repos.json
+      DEFCONFIG_NAME: ${{ matrix.repos.defconfig }}
 
       withKernelSU: ${{ matrix.repos.withKernelSU }}
     steps:
@@ -172,6 +173,7 @@ jobs:
           args: ${{ steps.generate-args.outputs.args }}
         run: |
           echo "PATH Variable: $PATH"
+          echo "Using defconfig: ${{ env.DEFCONFIG_NAME }}"
           make ${{ env.args }} ${{ env.DEFCONFIG_NAME }}
 
       - name: "🏴‍☠️ Before Action "
