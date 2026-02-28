@@ -24,8 +24,11 @@
       "CROSS_COMPILE": "aarch64-linux-android-",
       "CROSS_COMPILE_ARM32": "arm-linux-androideabi-",
       "CC": "gcc",
-      "LD": "ld",
+      "LD": "aarch64-linux-gnu-ld",  // <- используем системный линковщик
       "HOSTCFLAGS": "-fno-stack-protector"
+    },
+    "extraParams": {
+      "NETHUNTER": "1"
     },
     "defconfig": "vendor/sm8150-perf_defconfig",
     "nethunter": {
