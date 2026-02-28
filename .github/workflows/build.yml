@@ -72,7 +72,10 @@ jobs:
             libarchive-tools \
             flex \
             bison \
-            libncurses-dev
+            libncurses-dev \
+            libc6-dev-i386 \
+            lib32z1 \
+            lib32stdc++6
 
       - name: "🌟 Clone kernel source => (${{ env.kernelRepo }})"
         working-directory: ./${{ env.kernelDir }}
