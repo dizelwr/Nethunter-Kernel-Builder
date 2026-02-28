@@ -10,7 +10,7 @@
     "toolchains": [
       {
         "repo": "https://gitlab.com/ThankYouMario/android_prebuilts_clang-standalone/",
-        "branch": "r416183b",
+        "branch": "r487747c",
         "name": "clang"
       }
     ],
