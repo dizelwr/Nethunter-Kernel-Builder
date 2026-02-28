@@ -26,7 +26,7 @@
       "CC": "gcc",
       "LD": "ld"
     },
-    "defconfig": "sm8150-perf_defconfig",
+    "defconfig": "vendor/sm8150-perf_defconfig",
     "nethunter": {
       "enabled": true,
       "patches": [
