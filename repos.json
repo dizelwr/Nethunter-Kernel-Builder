@@ -23,8 +23,10 @@
       "ARCH": "arm64",
       "CROSS_COMPILE": "aarch64-linux-android-",
       "CROSS_COMPILE_ARM32": "arm-linux-androideabi-",
-      "CC": "gcc"
+      "CC": "gcc",
+      "LD": "ld"
     },
+    "defconfig": "vendor/lineage_guacamole_defconfig",
     "nethunter": {
       "enabled": true,
       "patches": [
@@ -40,9 +42,9 @@
         "RTL88XXAU",
         "RTL88X2BU",
         "NFS",
-        "CAN"
+        "CAN",
+        "NEXMON"
       ]
-    },
-    "defconfig": "vendor/sm8150-perf_defconfig"
+    }
   }
 ]
