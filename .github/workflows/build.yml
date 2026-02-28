@@ -42,7 +42,6 @@ jobs:
       kernelBranch: ${{ matrix.repos.kernelSource.branch }}
       kernelDevice: ${{ matrix.repos.kernelSource.device }}
 
-      # Берем defconfig из repos.json
       DEFCONFIG_NAME: ${{ matrix.repos.defconfig }}
 
       withKernelSU: ${{ matrix.repos.withKernelSU }}
@@ -117,6 +116,7 @@ jobs:
           CLANG_TRIPLE=$(echo $params | jq -r ".CLANG_TRIPLE")
           AR=$(echo $params | jq -r ".AR")
           CC=$(echo $params | jq -r ".CC")
+          HOSTCFLAGS=$(echo $params | jq -r ".HOSTCFLAGS")
 
           echo "ARCH=$ARCH" >> $GITHUB_ENV
 
@@ -142,6 +142,9 @@ jobs:
           fi
           if [ -n "$CC" ]; then
             args="$args CC=$CC"
+          fi
+          if [ -n "$HOSTCFLAGS" ]; then
+            args="$args HOSTCFLAGS=$HOSTCFLAGS"
           fi
           echo "args=$args" >> $GITHUB_OUTPUT
           echo "extraParams_toJson: $extraParams"
@@ -175,6 +178,13 @@ jobs:
           echo "PATH Variable: $PATH"
           echo "Using defconfig: ${{ env.DEFCONFIG_NAME }}"
           make ${{ env.args }} ${{ env.DEFCONFIG_NAME }}
+          
+          # Отключаем stack-protector в сгенерированном конфиге
+          if [ -f "$(pwd)/../out/.config" ]; then
+            sed -i 's/CONFIG_CC_STACKPROTECTOR_STRONG=y/# CONFIG_CC_STACKPROTECTOR_STRONG is not set/' $(pwd)/../out/.config
+            sed -i 's/CONFIG_CC_STACKPROTECTOR_AUTO=y/# CONFIG_CC_STACKPROTECTOR_AUTO is not set/' $(pwd)/../out/.config
+            echo "CONFIG_CC_STACKPROTECTOR_NONE=y" >> $(pwd)/../out/.config
+          fi
 
       - name: "🏴‍☠️ Before Action "
         env:
