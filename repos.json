@@ -9,8 +9,7 @@
     "withKernelSU": false,
     "toolchains": [
       {
-        "repo": "https://gitlab.com/ThankYouMario/android_prebuilts_clang-standalone/",
-        "branch": "r487747c",
+        "repo": "https://gitlab.com/ThankYouMario/android_prebuilts_clang-standalone.git",
         "name": "clang"
       }
     ],
