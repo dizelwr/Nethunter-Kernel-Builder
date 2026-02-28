@@ -26,7 +26,7 @@
       "CC": "gcc",
       "LD": "ld"
     },
-    "defconfig": "vendor/lineage_guacamole_defconfig",
+    "defconfig": "sm8150-perf_defconfig",
     "nethunter": {
       "enabled": true,
       "patches": [
