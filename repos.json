@@ -9,7 +9,8 @@
     "withKernelSU": false,
     "toolchains": [
       {
-        "repo": "https://gitlab.com/ThankYouMario/android_prebuilts_clang-standalone.git",
+        "repo": "https://github.com/kdrag0n/proton-clang.git",
+        "branch": "master",
         "name": "clang"
       }
     ],
