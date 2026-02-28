@@ -3,7 +3,7 @@
     "kernelSource": {
       "name": "OnePlus7Pro_Nethunter",
       "repo": "https://github.com/LineageOS/android_kernel_oneplus_sm8150",
-      "branch": "lineage-23.2",
+      "branch": "lineage-18.1",
       "device": "guacamole"
     },
     "withKernelSU": false,
@@ -42,6 +42,7 @@
         "NFS",
         "CAN"
       ]
-    }
+    },
+    "defconfig": "vendor/sm8150-perf_defconfig"
   }
 ]
