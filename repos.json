@@ -1,20 +1,16 @@
-[  {
+[
+  {
     "kernelSource": {
-      "name": "MikasaNethunter",
-      "repo": "https://github.com/noophyy/mikasa_kernel_realme2_c1.git",
-      "branch": "Light",
-      "device": "mikasa"
+      "name": "OnePlus7Pro_Nethunter",
+      "repo": "https://github.com/OnePlusOSS/android_kernel_oneplus_sm8150",
+      "branch": "oneplus/SM8150_Q_10.0",
+      "device": "guacamole"
     },
     "withKernelSU": false,
     "toolchains": [
       {
-        "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
-        "branch": "master",
-        "name": "gas"
-      },
-      {
-        "repo": "https://github.com/kdrag0n/proton-clang.git",
-        "branch": "master",
+        "repo": "https://gitlab.com/ThankYouMario/android_prebuilts_clang-standalone/",
+        "branch": "r416183b",
         "name": "clang"
       }
     ],
@@ -22,17 +18,27 @@
       "ARCH": "arm64",
       "CROSS_COMPILE": "aarch64-linux-gnu-",
       "CROSS_COMPILE_ARM32": "arm-linux-gnueabi-",
-      "CROSS_COMPILE_COMPAT": "arm-linux-gnueabi-",
       "CLANG_TRIPLE": "aarch64-linux-gnu-",
-      "AR": "llvm-ar",
-      "OBJDUMP": "llvm-objdump",
-      "STRIP": "llvm-strip",
-      "OBJCOPY": "llvm-objcopy",
-      "NM": "llvm-nm",
       "CC": "clang"
     },
-    "extraParams": {
-      "KEEP": ""
+    "nethunter": {
+      "enabled": true,
+      "patches": [
+        "BT_RFCOMM",
+        "INTERNAL_BT",
+        "RTL_BT",
+        "HID",
+        "HID_4",
+        "INJECTION",
+        "ATH9K_HTC",
+        "RTL8188EUS",
+        "RTL8812AU",
+        "RTL88XXAU",
+        "RTL88X2BU",
+        "NFS",
+        "CAN",
+        "NEXMON"
+      ]
     }
   }
 ]
