@@ -2,8 +2,8 @@
   {
     "kernelSource": {
       "name": "OnePlus7Pro_Nethunter",
-      "repo": "https://github.com/OnePlusOSS/android_kernel_oneplus_sm8150",
-      "branch": "oneplus/SM8150_Q_10.0",
+      "repo": "https://github.com/LineageOS/android_kernel_oneplus_sm8150",
+      "branch": "lineage-23.2",
       "device": "guacamole"
     },
     "withKernelSU": false,
@@ -40,8 +40,7 @@
         "RTL88XXAU",
         "RTL88X2BU",
         "NFS",
-        "CAN",
-        "NEXMON"
+        "CAN"
       ]
     }
   }
