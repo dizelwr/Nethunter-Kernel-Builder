@@ -3,7 +3,7 @@
     "kernelSource": {
       "name": "OnePlus7NetHunter",
       "repo": "https://github.com/LineageOS/android_kernel_oneplus_sm8150.git",
-      "branch": "lineage-21.0",
+      "branch": "lineage-23.2",
       "device": "guacamole"
     },
     "withKernelSU": false,
